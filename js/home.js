@@ -170,6 +170,21 @@ function renderProgram(index) {
         getImageUrl(program.image);
 }
 
+function renderProgramButtons() {
+    const container = document.getElementById("programButtons");
+    if (!container || !programsData) return;
+
+    container.innerHTML = "";
+
+    programsData.forEach((p, index) => {
+        container.innerHTML += `
+            <button onclick="renderProgram(${index})">
+                ${p.title}
+            </button>
+        `;
+    });
+}
+
 /* =========================
    COACH SECTION
 ========================= */
