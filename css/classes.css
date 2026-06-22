@@ -45,44 +45,7 @@
     margin-bottom: 25px;
 }
 
-/* BUTTONS */
-.classes-buttons {
-    display: flex;
-    gap: 15px;
-}
 
-/* PRIMARY BUTTON */
-.primary-btn {
-    padding: 14px 28px;
-    border: none;
-    border-radius: 30px;
-    background: linear-gradient(135deg,#ff9800,#ff5e00);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.primary-btn:hover {
-    transform: translateY(-3px);
-}
-
-/* SECONDARY BUTTON */
-.secondary-btn {
-    padding: 14px 28px;
-    border: 1px solid white;
-    border-radius: 30px;
-    background: transparent;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.secondary-btn:hover {
-    background: white;
-    color: black;
-}
 
 /* =========================
    CLASS CATEGORIES
