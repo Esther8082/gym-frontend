@@ -1,5 +1,6 @@
 
 const BASE_URL = "https://gym-website-1-guo0.onrender.com";
+let programsData = [];
 
 /* =========================
    IMAGE HELPER (FIXED + DEBUG)
@@ -146,18 +147,6 @@ async function loadHomeMemberships() {
     }
 }
 
-function renderCoach(index) {
-    const coach = coachesData[index];
-    if (!coach) return;
-
-    document.getElementById("coachName").textContent = coach.name;
-    document.getElementById("coachDesc").textContent = coach.description;
-
-    const imgContainer = document.getElementById("coachImages");
-    imgContainer.innerHTML = `
-        <img src="${getImageUrl(coach.image)}" alt="${coach.name}">
-    `;
-}
 
 function renderProgram(index) {
     const program = programsData[index];
@@ -190,31 +179,31 @@ function renderProgramButtons() {
 ========================= */
 
 let coachesData = [];
-let currentCoachIndex = 0;
 
 async function loadCoaches() {
     try {
         const res = await fetch(`${BASE_URL}/trainers`);
-
-        if (!res.ok) throw new Error("Failed to fetch trainers");
-
         coachesData = await res.json();
 
-        renderCoach(0);
-
-        setInterval(() => {
-            if (!coachesData.length) return;
-
-            currentCoachIndex =
-                (currentCoachIndex + 1) % coachesData.length;
-
-            renderCoach(currentCoachIndex);
-
-        }, 5000);
+        renderCoaches();
 
     } catch (err) {
         console.error("Failed to load coaches:", err);
     }
+}
+
+function renderCoaches() {
+    const container = document.getElementById("coachImages");
+    container.innerHTML = "";
+
+    coachesData.forEach(coach => {
+        const img = document.createElement("img");
+        img.className = "coach-img";
+        img.src = getImageUrl(coach.image);
+        img.alt = coach.name;
+
+        container.appendChild(img);
+    });
 }
 
 /* =========================
