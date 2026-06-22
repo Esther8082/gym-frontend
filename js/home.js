@@ -8,7 +8,7 @@ const BASE_URL = "https://gym-website-1-guo0.onrender.com";
 function getImageUrl(path) {
     if (!path) return "";
 
-    return `${BASE_URL}${path}`;
+    return `${BASE_URL}/${path.replace(/^\/+/, "")}`;
 }
 
 /* =========================
@@ -144,6 +144,30 @@ async function loadHomeMemberships() {
     } catch (err) {
         console.error("Failed to load home memberships:", err);
     }
+}
+
+function renderCoach(index) {
+    const coach = coachesData[index];
+    if (!coach) return;
+
+    document.getElementById("coachName").textContent = coach.name;
+    document.getElementById("coachDesc").textContent = coach.description;
+
+    const imgContainer = document.getElementById("coachImages");
+    imgContainer.innerHTML = `
+        <img src="${getImageUrl(coach.image)}" alt="${coach.name}">
+    `;
+}
+
+function renderProgram(index) {
+    const program = programsData[index];
+    if (!program) return;
+
+    document.getElementById("programTitle").textContent = program.title;
+    document.getElementById("programDescription").textContent = program.description;
+
+    document.getElementById("programImg").src =
+        getImageUrl(program.image);
 }
 
 /* =========================
