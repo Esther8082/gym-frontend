@@ -221,3 +221,12 @@ async function loadPrograms() {
         console.error("Failed to load programs:", err);
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadHomepageContent();
+    loadFlowPrograms();
+    loadHomeMemberships();
+    loadCoaches();
+    loadLocations();
+    loadPrograms();
+});
