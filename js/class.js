@@ -19,13 +19,13 @@ function getImageUrl(path) {
     return `${BASE_URL}${path.startsWith("/") ? "" : "/"}${path}`;
 }
 
-/* =========================
-   HERO IMAGE (SIMPLE FIX)
+/* =================
+   HERO IMAGE 
 ========================= */
 function setHeroImage() {
     const heroImg = document.querySelector(".classes-hero-img");
 
-   heroImg.src = "classesmedia/heroimage.jpg";
+   heroImg.src = "classesmedia/heroimage.jpg";}
 
 /* =========================
    LOAD DATA
@@ -210,8 +210,8 @@ function saveBooking() {
 /* =========================
    INIT
 ========================= */
+
 document.addEventListener("DOMContentLoaded", () => {
     setHeroImage();
     loadClasses();
 });
-}
