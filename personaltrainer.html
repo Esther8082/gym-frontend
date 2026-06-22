@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Trainers</title>
+
+ <link rel="stylesheet" href="css/homestyle.css">
+    <link rel="stylesheet" href="css/personaltrainer.css">
+    <script src="js/personaltrainer.js"></script>
+</head>
+<body>
+
+<!-- Navigation bar -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="home.html" class="home-link">Home</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="classes.html">Classes</a>
+        <a href="promotions.html">Promotions</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="media/PERSONALTRAINERVIDEO.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Your Goal Their Expertise</h1>
+
+        <p>
+            Meet our coaches
+        </p>
+
+        <p>
+            Dedicated one-on-one fitness guidance tailored to your goals.
+        </p>
+    </div>
+
+</section>
+
+<section class="trainer-section">
+
+    <h2>Meet Our Personal Trainers</h2>
+
+    <div class="trainer-grid">
+
+        <!-- Hans -->
+        <div class="trainer-card">
+
+            <img src="media/coachhans.jpg" alt="Coach Hans">
+
+            <h3>Coach Hans</h3>
+
+            <p>
+                Functional fitness specialist helping members improve mobility,
+                strength and injury prevention.
+            </p>
+
+            <button onclick="bookTrainer('Coach Hans')" class="book-btn">
+                Book Session
+            </button>
+
+        </div>
+
+        <!-- Jane -->
+        <div class="trainer-card">
+
+            <img src="media/coachjane.jpg" alt="Coach Jane">
+
+            <h3>Coach Jane</h3>
+
+            <p>
+                Expert in weight loss, HIIT training and sustainable lifestyle
+                coaching for long-term success.
+            </p>
+
+            <button onclick="bookTrainer('Coach Jane')" class="book-btn">
+                Book Session
+            </button>
+
+        </div>
+
+        <!-- Samson -->
+        <div class="trainer-card">
+
+            <img src="media/coachsamson.jpg" alt="Coach Samson">
+
+            <h3>Coach Samson</h3>
+
+            <p>
+                Strength and conditioning coach focused on muscle building,
+                endurance and athletic performance.
+            </p>
+
+            <button onclick="bookTrainer('Coach Samson')" class="book-btn">
+                Book Session
+            </button>
+
+        </div>
+
+    </div>
+
+    <p id="bookingMessage"></p>
+
+</section>

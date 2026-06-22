@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Clubs</title>
+
+    <link rel="stylesheet" href="css/homestyle.css">
+    <link rel="stylesheet" href="css/location.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="home.html" class="home-link">Home</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="classes.html">Classes</a>
+        <a href="promotions.html">Promotions</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+    </div>
+</nav>
+
+<!-- CLUBS SECTION -->
+<section class="clubs-section">
+
+    <h1 class="clubs-title">CLUBS</h1>
+
+    <div class="clubs-container">
+
+        <!-- MAP -->
+        <div class="map-container">
+
+            <img src="media/mapimage.jpg"
+                 alt="Gym Locations"
+                 class="map-image">
+
+            <button class="pin pin1">📍</button>
+            <span class="pin-label pin-label1">White River</span>
+
+            <button class="pin pin2">📍</button>
+            <span class="pin-label pin-label2">Valencia</span>
+
+            <button class="pin pin3">📍</button>
+            <span class="pin-label pin-label3">Sonpark</span>
+
+            <button class="pin pin4">📍</button>
+            <span class="pin-label pin-label4">Kingsview</span>
+
+        </div>
+
+        <!-- SEARCH & RESULT CARD -->
+        <div class="clubs-card">
+
+            <input
+                type="text"
+                id="locationSearch"
+                class="club-search"
+                placeholder="Search for a location...">
+
+            <button class="nearest-btn" onclick="searchClub()">
+                Search Club
+            </button>
+
+            <button class="nearest-btn" onclick="findNearestClub()">
+                Find My Nearest Club
+            </button>
+
+            <!-- RESULT CARD -->
+            <div class="club-details">
+
+                <h2 id="clubName">
+                
+                </h2>
+
+                <p id="clubAddress">
+                    
+                </p>
+
+                <div class="club-links">
+
+                    <a href="membership.html">
+                        🏋️ Join Now
+                    </a>
+
+                    <a href="contact.html">
+                        📞 Get In Touch
+                    </a>
+
+                    <a href="#">
+                        🧭 Get Directions
+                    </a>
+
+                </div>
+
+                <button class="view-club-btn">
+                    View Club
+                </button>
+
+                <h3>Facilities</h3>
+
+                <p id="clubFacilities">
+                   
+                </p>
+
+                <h3>Opening Hours</h3>
+
+                <p id="clubHours">
+                   
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="js/location.js"></script>
+
+</body>
+</html>

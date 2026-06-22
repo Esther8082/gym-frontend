@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Next Gen Fitness</title>
+
+    <link rel="stylesheet" href="css/homestyle.css">
+    <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="home.html" class="home-link">Home</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="classes.html">Classes</a>
+        <a href="promotions.html">Promotions</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+    </div>
+</nav>
+
+<section class="faq-section">
+
+    <div class="faq-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about Next Gen Fitness.</p>
+    </div>
+
+    <div class="faq-container">
+
+        <div class="faq-item">
+            <button class="faq-question">
+                How do I join Next Gen Fitness?
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    You can join by visiting the Membership page and selecting
+                    the membership plan that best suits your needs.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Can I cancel my membership?
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Yes. Members may cancel according to the terms and conditions
+                    of their selected membership plan.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Are personal trainers available?
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Yes. Our certified personal trainers are available to help
+                    members achieve their fitness goals.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                What are the gym operating hours?
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Most branches operate from 05:00 AM to 09:00 PM,
+                    Monday to Sunday.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Do you offer group classes?
+            </button>
+
+            <div class="faq-answer">
+                <p>
+                    Yes. We offer a variety of classes including yoga,
+                    cardio dance, strength training, and aqua fitness.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-- CHATBOT -->
+<div class="chat-button" onclick="toggleChat()">
+    💬 Chat
+</div>
+
+<div class="chat-box" id="chatBox">
+
+    <div class="chat-header">
+        <span>Next Gen Support</span>
+        <button onclick="toggleChat()">✖</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+        <div class="bot-msg">Hi 👋 How can we help you today?</div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+<script src="js/faq.js"></script>
+
+</body>
+</html>

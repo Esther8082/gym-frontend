@@ -1,0 +1,405 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    z-index: 1000;
+}
+
+.home-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav-right {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-right a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.membership-hero {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.membership-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+}
+
+/* =========================
+STANDARD PLAN
+========================= */
+
+.standard-section {
+    padding: 80px 10%;
+    background: #0a0a0a;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Toggle */
+.billing-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.billing-toggle button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+.billing-toggle .active {
+    background: linear-gradient(135deg, #ff9800, #ff5e00);
+}
+
+/* Card */
+.plan-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #111;
+    padding: 30px;
+    border-radius: 20px;
+    gap: 40px;
+
+}
+
+/* Left side */
+.plan-info {
+    flex: 1;
+}
+
+.plan-info h3 {
+    font-size: 2rem;
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+
+.plan-info p {
+    color: #ddd;
+    line-height: 1.8;
+}
+
+/* Button */
+.select-btn {
+    margin-top: 20px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff9800, #ff5e00);
+    color: white;
+    cursor: pointer;
+}
+
+/* Right image */
+.plan-image {
+    flex: 1;
+}
+
+.plan-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Dots */
+.plan-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #444;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #ff9800;
+}
+
+/* =========================
+   COMPARE PLANS
+========================= */
+
+.compare-section {
+    padding: 100px 10%;
+    background: #0a0a0a;
+}
+
+.compare-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.compare-table th {
+    background: linear-gradient(135deg, #ff9800, #ff5e00);
+    color: white;
+    padding: 18px;
+    font-size: 18px;
+}
+
+.compare-table td {
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid #222;
+}
+
+.compare-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #ff9800;
+}
+
+.compare-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+/* =========================
+   TABLE JOIN BUTTONS
+========================= */
+
+.join-row td {
+    padding: 30px 20px;
+    border-bottom: none !important;
+}
+
+.table-join-btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.table-join-btn:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.15);
+}
+
+.table-join-btn {
+    padding: 12px 28px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 30px;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.table-join-btn:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   SPECIALIZED PLANS
+========================= */
+
+.specialized-section {
+    padding: 100px 10%;
+    background: #0a0a0a;
+}
+
+.specialized-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.specialized-subheading {
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+}
+
+.specialized-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #ff9800;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   SIGN UP SECTION (WHITE CARD)
+========================= */
+
+.signup-section {
+    padding: 100px 10%;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+}
+
+.signup-container {
+    background: white;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.signup-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+/* Form layout */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+     flex-wrap: wrap;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Inputs */
+
+.signup-form input,
+.signup-form select {
+    flex: 1;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* Focus effect */
+.signup-form input:focus,
+.signup-form select:focus {
+    border-color: #ff9800;
+    box-shadow: 0 0 0 3px rgba(255,152,0,0.2);
+}
+
+/* Button */
+.signup-btn {
+    margin-top: 20px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff9800, #ff5e00);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255,94,0,0.3);
+}

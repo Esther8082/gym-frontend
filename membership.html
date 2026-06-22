@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans</title>
+
+    <link rel="stylesheet" href="css/membership.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="home.html" class="home-link">Home</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="classes.html">Classes</a>
+        <a href="promotions.html">Promotions</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="membership-hero">
+
+  <img id="heroImage" alt="Membership Hero Image" style="width:100%; height:400px; object-fit:cover;">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Membership Plans</h1>
+        <p>Choose a membership that fits your fitness journey.</p>
+    </div>
+
+</section>
+
+<!-- STANDARD SECTION -->
+<section class="standard-section">
+
+    <h2 class="section-title">Standard Plan</h2>
+
+    <div class="billing-toggle">
+        <button class="active">Monthly</button>
+        <button>Annually</button>
+    </div>
+
+    <div class="plan-card">
+
+        <div class="plan-info">
+            <h3 id="planTitle"></h3>
+
+            <p id="planDescription"></p>
+            <p id="planPrice" class="plan-price"></p>
+            <button class="select-btn">Select Plan</button>
+        </div>
+
+        <div class="plan-image">
+            <img id="planImg" alt="Membership image">
+        </div>
+
+    </div>
+
+    <div class="plan-dots">
+        <span class="dot active" onclick="setPlan(0)"></span>
+        <span class="dot" onclick="setPlan(1)"></span>
+        <span class="dot" onclick="setPlan(2)"></span>
+    </div>
+
+</section>
+
+<!-- SPECIALIZED SECTION -->
+<section class="specialized-section">
+
+    <h2 class="specialized-heading">Have Not Found What Plan You're Comfortable With?</h2>
+    <p class="specialized-subheading">We've Got You Covered With Our</p>
+    <h2 class="specialized-title">Specialized Plans</h2>
+
+    <div class="billing-toggle">
+        <button class="active">Monthly</button>
+        <button>Annually</button>
+    </div>
+
+    <div class="plan-card">
+
+        <div class="plan-info">
+            <h3 id="specializedTitle"></h3>
+            <p id="specializedDescription"></p>
+            <p id="specializedPrice" class="plan-price"></p>
+            <button class="select-btn">Select Plan</button>
+        </div>
+
+        <div class="plan-image">
+            <img id="specializedImg" alt="Membership image">
+        </div>
+
+    </div>
+
+    <div class="plan-dots">
+        <span class="dot specialized-dot active" onclick="setSpecializedPlan(0)"></span>
+        <span class="dot specialized-dot" onclick="setSpecializedPlan(1)"></span>
+        <span class="dot specialized-dot" onclick="setSpecializedPlan(2)"></span>
+    </div>
+
+</section>
+
+<!-- SIGN UP SECTION (RESTORED) -->
+<section class="signup-section">
+
+    <div class="signup-container">
+
+        <h2 class="signup-title">Sign Up</h2>
+
+        <form class="signup-form">
+
+            <div class="form-row">
+                <input type="text" placeholder="Name" required>
+                <input type="text" placeholder="Surname" required>
+            </div>
+
+            <div class="form-row">
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="form-row">
+                <select required>
+                    <option value="">Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <input type="text" placeholder="Address Line 1" required>
+
+            <div class="form-row">
+                <input type="text" placeholder="City" required>
+                <input type="text" placeholder="State" required>
+                <input type="text" placeholder="Zip Code" required>
+            </div>
+
+            <button type="submit" class="signup-btn">
+                Create Account
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script src="js/membership.js"></script>
+</body>
+</html>

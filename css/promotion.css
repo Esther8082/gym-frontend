@@ -1,0 +1,75 @@
+/* ==============
+   PROMOTIONS PAGE 
+============ */
+
+body {
+    background: #0f0f0f;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* HERO */
+.promo-hero {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #111, #1a1a1a);
+}
+
+.promo-hero h1 {
+    font-size: 46px;
+    color: #ff7a00;
+    margin-bottom: 10px;
+}
+
+.promo-hero p {
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+/* SECTION */
+.promo-section {
+    display: flex;
+    justify-content: center;
+    padding: 60px 10%;
+}
+
+/* SIMPLE CARD */
+.promo-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 122, 0, 0.2);
+}
+
+/* TITLE */
+.promo-card h2 {
+    color: #ff7a00;
+    margin-bottom: 15px;
+}
+
+/* TEXT */
+.promo-card p {
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* BUTTON */
+.promo-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: #ff7a00;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.promo-btn:hover {
+    background: #ff8c1a;
+    transform: translateY(-2px);
+}

@@ -1,0 +1,48 @@
+body {
+    background: #0f0f0f;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* HERO */
+.privacy-hero {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #111, #1a1a1a);
+}
+
+.privacy-hero h1 {
+    font-size: 46px;
+    color: #ff7a00;
+}
+
+.privacy-hero p {
+    opacity: 0.8;
+}
+
+/* CONTAINER */
+.privacy-container {
+    padding: 60px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* CARDS */
+.privacy-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #ff7a00;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.privacy-card h2 {
+    color: #ff7a00;
+    margin-bottom: 10px;
+}
+
+.privacy-card p {
+    line-height: 1.6;
+    opacity: 0.85;
+}

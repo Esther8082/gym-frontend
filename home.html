@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gym Website</title>
+
+    <link rel="stylesheet" href="css/homestyle.css">
+
+</head>
+
+
+<body>
+
+<!-- Navigation bar -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="home.html" class="home-link">Home</a>
+    </div>
+
+   <!-- HAMBURGER BUTTON -->
+    <button class="hamburger" onclick="toggleMenu()">
+        ☰
+    </button>
+
+     <!-- NAV LINKS -->
+    <div class="nav-right" id="navLinks">
+        <a href="classes.html">Classes</a>
+        <a href="promotions.html">Promotions</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+ <video autoplay muted loop class="hero-video" id="heroVideo">
+    <source id="heroVideoSource" type="video/mp4">
+</video>
+
+    <div class="hero-text">
+        <h1>Next Gen Fitness</h1>
+        <p>The future of fitness starts here</p>
+    </div>
+</section>
+
+<!-- Moving Cards -->
+<section class="features-section">
+    <div class="features-track">
+
+        <div class="feature-card"><h3>Expert Trainers</h3></div>
+        <div class="feature-card"><h3>Modern Training Facilities</h3></div>
+        <div class="feature-card"><h3>Flexible Class Schedules</h3></div>
+        <div class="feature-card"><h3>Programs For All Fitness Levels</h3></div>
+        <div class="feature-card"><h3>Supportive Fitness Community</h3></div>
+
+        <!-- duplicate -->
+        <div class="feature-card"><h3>Expert Trainers</h3></div>
+        <div class="feature-card"><h3>Modern Training Facilities</h3></div>
+        <div class="feature-card"><h3>Flexible Class Schedules</h3></div>
+        <div class="feature-card"><h3>Programs For All Fitness Levels</h3></div>
+        <div class="feature-card"><h3>Supportive Fitness Community</h3></div>
+
+    </div>
+</section>
+
+<!-- Welcome -->
+<section class="welcome-section">
+
+    <div class="welcome-container">
+
+        <div class="welcome-text">
+            <h2>Welcome to Next Gen Fitness</h2>
+
+            <p>
+                At Next Gen Fitness, we believe fitness is more than just exercise—it's a lifestyle.
+                Our state-of-the-art facilities, expert trainers, and supportive community are
+                designed to help you achieve your goals.
+            </p>
+
+            <button class="join-btn">Join Now</button>
+        </div>
+
+        <div class="welcome-image">
+           <img id="welcomeImage" alt="Dumbbell">        </div>
+
+    </div>
+
+</section>
+
+<!-- Flow Section -->
+<section class="flow-section">
+
+    <h2 class="flow-title">Find Your Flow</h2>
+    <div class="flow-cards" id="flowCards"></div>
+
+</section>
+
+<!-- MEMBERSHIP SECTION (FIXED) -->
+<section class="membership-section">
+
+    <h2 class="membership-title">Choose the plan best for you</h2>
+
+    <div class="billing-toggle">
+        <button class="active-toggle">Monthly</button>
+        <button>Yearly</button>
+    </div>
+
+    <div class="membership-container">
+
+        <!-- STANDARD -->
+        <div class="membership-column">
+
+            <h3>Standard Membership</h3>
+
+           <div class="card-stack" id="standardMembershipCards"></div>
+
+        </div>
+
+        <!-- SPECIALIZED -->
+        <div class="membership-column">
+
+            <h3>Specialized Membership</h3>
+
+            <div class="card-stack" id="specializedMembershipCards"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="coach-section">
+
+    <h2 class="coach-title">Your Fitness Goal Their Expertise</h2>
+    <h3 class="coach-subtitle">Meet Your Coach</h3>
+
+    <div class="coach-container">
+
+        <!-- LEFT INFO PANEL -->
+        <div class="coach-info">
+            <h3 id="coachName">Samson Dlamini</h3>
+
+            <p id="coachDesc">
+                Samson is a strength and conditioning specialist focused on helping clients build muscle,
+                improve endurance, and achieve peak performance through structured training programs.
+            </p>
+        </div>
+
+        <!-- RIGHT IMAGE STACK -->
+       <div class="coach-images" id="coachImages"></div>
+
+    </div>
+ <div class="trainer-btn-container">
+                <a href="personaltrainer.html" class="trainer-btn">
+                    View Personal Trainers
+                </a>
+</div>
+    </div>
+
+</section>
+
+<section class="locations">
+
+    <!-- MAP -->
+    <div class="map-container">
+
+        <img id="mapImage" alt="Gym Map" class="map-image">
+
+        <button class="pin pin1">📍</button>
+        <button class="pin pin2">📍</button>
+        <button class="pin pin3">📍</button>
+        <button class="pin pin4">📍</button>
+
+    </div>
+
+    <!-- LOCATION GRID -->
+    <div class="location-grid">
+
+        <div class="location-grid" id="locationGrid"></div>
+
+
+     <!-- BUTTON BELOW IMAGES -->
+        <div class="locations-button-wrapper">
+            <button class="locations-btn" onclick="openLocationsPage()">
+                View All Locations
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- New Programs Section -->
+<section class="programs-section">
+
+    <h2 class="section-title">NEW PROGRAMS</h2>
+
+    <!-- FEATURED CARD -->
+   <div class="program-display">
+
+    <div class="program-image">
+        <img id="programImg" alt="Program">
+    </div>
+
+    <div class="program-content">
+        <h3 id="programTitle"></h3>
+        <p id="programDescription"></p>
+    </div>
+
+</div>
+
+<div class="program-buttons" id="programButtons"></div>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>QUICK LINKS</h3>
+
+            <ul>
+                <li><a href="fitnessblog.html">Fitness Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>FOLLOW NEXT GEN FITNESS</h3>
+
+            <ul>
+                <li>
+  <a href="https://www.facebook.com/planetfitnesssouthafrica" target="_blank">
+    Facebook
+  </a>
+</li>
+
+<li>
+  <a href="https://www.instagram.com/planetfitnessza/" target="_blank">
+    Instagram
+  </a>
+</li>
+
+<li>
+  <a href="https://twitter.com/" target="_blank">
+    X (Twitter)
+  </a>
+</li>
+
+</ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>LEGAL</h3>
+
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+<li><a href="privacy.html#terms">Terms of Service</a></li>
+<li><a href="privacy.html#ssl">SSL Certification</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Next Gen Fitness.</p>
+    </div>
+
+
+</section>
+</footer>
+
+<script src="js/home.js"></script>
+
+</body>
+</html>

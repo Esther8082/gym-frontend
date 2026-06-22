@@ -1,0 +1,169 @@
+.faq-section {
+    min-height: 100vh;
+    padding: 100px 8%;
+    background: linear-gradient(to right, #111, #1a1a1a);
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.faq-header h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.faq-header p {
+    color: #ccc;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 22px;
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.faq-question:hover {
+    background: rgba(255,122,0,0.15);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+}
+
+.faq-answer p {
+    color: #ddd;
+    padding: 0 22px 22px;
+    line-height: 1.8;
+}
+
+.faq-item.active .faq-question {
+    color: #ff7a00;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+/* ===================
+   CHATBOT
+========================= */
+
+.chat-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    background: #ff7a00;
+    color: white;
+
+    padding: 15px 18px;
+    border-radius: 50px;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.chat-box {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+
+    width: 300px;
+    height: 400px;
+
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    display: none;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.chat-header {
+    background: #ff7a00;
+    color: white;
+
+    padding: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-msg {
+    align-self: flex-end;
+    background: #333;
+    color: white;
+
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.bot-msg {
+    align-self: flex-start;
+    background: #ff7a00;
+    color: white;
+
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #333;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+
+    border: none;
+    outline: none;
+}
+
+.chat-input button {
+    background: #ff7a00;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+}

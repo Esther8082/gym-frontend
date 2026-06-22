@@ -1,0 +1,187 @@
+/* =========================
+   CLUBS PAGE
+========================= */
+
+.clubs-section {
+    padding: 120px 8% 80px;
+    background: #0a0a0a;
+    min-height: 100vh;
+}
+
+.clubs-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: white;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.clubs-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.map-container {
+    position: relative;
+    width: 700px;
+}
+
+.map-image {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* PIN ICONS */
+.pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pin.active-pin {
+    transform: translate(-50%, -70%);
+    font-size: 34px;
+    filter: drop-shadow(0 0 10px orange);
+}
+
+/* PIN POSITIONS */
+.pin1 { top: 30%; left: 20%; }
+.pin2 { top: 50%; left: 60%; }
+.pin3 { top: 70%; left: 35%; }
+.pin4 { top: 25%; left: 80%; }
+
+/* LABELS */
+.pin-label {
+    position: absolute;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+/* match labels to pins */
+.pin-label1 { top: 34%; left: 20%; }
+.pin-label2 { top: 54%; left: 60%; }
+.pin-label3 { top: 74%; left: 35%; }
+.pin-label4 { top: 29%; left: 80%; }
+
+/* =========================
+   RIGHT CARD
+========================= */
+
+.clubs-card {
+    width: 360px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 25px;
+}
+
+/* SEARCH */
+.club-search {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+/* BUTTONS */
+.nearest-btn {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg,#ff9800,#ff5e00);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ===================
+   RESULT CARD
+========================= */
+
+.club-details {
+    margin-top: 15px;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+}
+
+.club-details h2 {
+    color: #ff9800;
+    margin-bottom: 8px;
+}
+
+#clubAddress {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 15px;
+}
+
+/* LINKS */
+.club-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.club-links a {
+    text-decoration: none;
+    color: white;
+    background: rgba(255,255,255,0.08);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.club-links a:hover {
+    background: rgba(255,152,0,0.25);
+    transform: translateX(5px);
+}
+
+/* VIEW BUTTON */
+.view-club-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.view-club-btn:hover {
+    background: #444;
+}
+
+/* TEXT */
+.club-details h3 {
+    color: #ff9800;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.club-details p {
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+}

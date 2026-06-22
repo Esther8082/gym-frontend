@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+
+    <link rel="stylesheet" href="css/homestyle.css">
+    <link rel="stylesheet" href="css/classes.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="home.html" class="home-link">Home</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="classes.html">Classes</a>
+        <a href="promotions.html">Promotions</a>
+        <a href="membership.html">Membership</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Us</a>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="classes-hero">
+
+    <!-- FIXED HERO IMAGE (clean + JS controlled) -->
+    <img class="classes-hero-img" alt="Classes Hero">
+
+    <div class="classes-hero-overlay"></div>
+
+    <div class="classes-hero-content">
+
+        <h1>FIND YOUR PERFECT CLASS</h1>
+        <p>From beginner to advanced, we have something for everyone</p>
+
+        <div class="classes-buttons">
+            <button class="primary-btn">Book a Free Class</button>
+            <button class="secondary-btn">View Schedule</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CLASS CATEGORIES -->
+<section class="classes-section">
+
+    <h2 class="classes-title">CLASS CATEGORIES</h2>
+
+    <div class="classes-grid" id="classesGrid"></div>
+
+</section>
+
+<!-- CLASS VIEW -->
+<section id="class-view" class="class-hero-section">
+
+    <div class="class-overlay"></div>
+
+    <div class="class-content">
+
+        <h1 id="classTitle">Select a Class</h1>
+
+        <p class="subtitle">Book your session</p>
+
+        <div class="info-card">
+            <p><strong>Level:</strong> <span id="classLevel"></span></p>
+            <p><strong>Duration:</strong> <span id="classDuration"></span></p>
+            <p><strong>Category:</strong> <span id="classCategory"></span></p>
+        </div>
+
+        <div class="gym-select">
+            <button onclick="changeGym('White River')">White River</button>
+            <button onclick="changeGym('Valencia')">Valencia</button>
+            <button onclick="changeGym('Sonpark')">Sonpark</button>
+            <button onclick="changeGym('Kingsview')">Kingsview</button>
+        </div>
+
+        <div class="schedule-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Duration</th>
+                        <th>Instructor</th>
+                    </tr>
+                </thead>
+
+                <tbody id="scheduleBody"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BOOKING SECTION -->
+<section id="bookingSection" class="booking-section">
+
+    <div class="booking-card">
+
+        <h2>Saved Session</h2>
+
+        <p><strong>Class:</strong> <span id="bookingTitle"></span></p>
+        <p><strong>Level:</strong> <span id="bookingLevel"></span></p>
+        <p><strong>Duration:</strong> <span id="bookingDuration"></span></p>
+        <p><strong>Category:</strong> <span id="bookingCategory"></span></p>
+
+        <p><strong>Day:</strong> <span id="bookingDay"></span></p>
+        <p><strong>Time:</strong> <span id="bookingTime"></span></p>
+        <p><strong>Coach:</strong> <span id="bookingCoach"></span></p>
+
+        <button class="SaveBooking" onclick="saveBooking()">Save Booking</button>
+
+        <p id="bookingMessage" class="booking-message"></p>
+
+    </div>
+
+</section>
+
+<script src="js/class.js"></script>
+</body>
+</html>
