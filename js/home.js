@@ -60,7 +60,9 @@ async function loadHomepageContent() {
     } catch (err) {
         console.error("Failed to load homepage content:", err);
     }
+
 }
+
 
 /* =========================
    MENU TOGGLE
@@ -179,31 +181,34 @@ function renderProgramButtons() {
 ========================= */
 
 let coachesData = [];
+let coachIndex = 0;
 
 async function loadCoaches() {
     try {
         const res = await fetch(`${BASE_URL}/trainers`);
         coachesData = await res.json();
 
-        renderCoaches();
+        if (!coachesData.length) return;
+
+        showCoach(0);
+
+        setInterval(() => {
+            coachIndex = (coachIndex + 1) % coachesData.length;
+            showCoach(coachIndex);
+        }, 4000);
 
     } catch (err) {
         console.error("Failed to load coaches:", err);
     }
 }
 
-function renderCoaches() {
-    const container = document.getElementById("coachImages");
-    container.innerHTML = "";
+function showCoach(i) {
+    const coach = coachesData[i];
+    if (!coach) return;
 
-    coachesData.forEach(coach => {
-        const img = document.createElement("img");
-        img.className = "coach-img";
-        img.src = getImageUrl(coach.image);
-        img.alt = coach.name;
-
-        container.appendChild(img);
-    });
+    document.getElementById("coachName").textContent = coach.name;
+    document.getElementById("coachDesc").textContent = coach.description;
+    document.getElementById("coachImage").src = getImageUrl(coach.image);
 }
 
 /* =========================
@@ -250,6 +255,32 @@ async function loadPrograms() {
     }
 }
 
+function initMapLogic() {
+    const pins = document.querySelectorAll(".pin");
+    const mapImg = document.getElementById("mapImage");
+
+    const locations = [
+        "media/sonpark.jpg",
+        "media/kingsview.jpg",
+        "media/whiteriver.jpg",
+        "media/valencia.jpg"
+    ];
+
+    pins.forEach((pin, index) => {
+        pin.addEventListener("click", () => {
+            mapImg.src = getImageUrl(locations[index]);
+
+            pins.forEach(p => p.classList.remove("active-pin"));
+            pin.classList.add("active-pin");
+        });
+    });
+
+    mapImg.addEventListener("click", () => {
+        mapImg.src = getImageUrl("/media/mapimage.jpg");
+        pins.forEach(p => p.classList.remove("active-pin"));
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     loadHomepageContent();
     loadFlowPrograms();
@@ -257,4 +288,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCoaches();
     loadLocations();
     loadPrograms();
+    initMapLogic()
 });
+

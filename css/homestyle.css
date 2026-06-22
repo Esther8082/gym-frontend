@@ -676,9 +676,43 @@ opacity: 0.85; }
 }
 
 
-/* =========================
-Program Buttons (Join Style)
+/* ================
+Program Buttons 
 ========================= */
+.program-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.program-buttons button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+
+    background: #111;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.program-buttons button:hover {
+    background: orange;
+    transform: translateY(-3px);
+}
+
+.program-buttons button.active {
+    background: orange;
+    color: white;
+}
+
 .programs-section {
     padding: 80px 10%;
     background: #0a0a0a;
