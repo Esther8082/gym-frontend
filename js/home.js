@@ -6,9 +6,12 @@ const BASE_URL = "https://gym-website-1-guo0.onrender.com";
 
 function getImageUrl(path) {
     if (!path) return "";
-    return `${BASE_URL}/${path.replace(/^\/+/, "")}`;
-}
 
+    return `${BASE_URL}/${path
+        .replace(/^\/+/, "")
+        .replace(/^media\//, "")
+    }`;
+}
 /* =========================
    HOMEPAGE CONTENT
 ========================= */
