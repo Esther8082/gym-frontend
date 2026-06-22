@@ -444,11 +444,6 @@ color: white; }
         
 /* LAYOUT */
 
-.coach-container { 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center; } 
     
 /* LEFT SIDE */ 
 .coach-info h3 {
@@ -957,7 +952,8 @@ Program Buttons
 
     /* COACH SECTION */
     .coach-container {
-        flex-direction: column;
+         flex-direction: column;
+        text-align: center;
     }
 
     .coach-images img {

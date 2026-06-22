@@ -2,9 +2,9 @@
 const BASE_URL = "https://gym-website-1-guo0.onrender.com";
 let programsData = [];
 
-/* =========================
-   IMAGE HELPER (FIXED + DEBUG)
-========================= */
+/* ==============
+   IMAGE HELPER 
+================ */
 
 function getImageUrl(path) {
     if (!path) return "";
@@ -12,20 +12,10 @@ function getImageUrl(path) {
     return `${BASE_URL}/${path.replace(/^\/+/, "")}`;
 }
 
-/* =========================
-   GLOBAL IMAGE ERROR TRACKER
-========================= */
 
-document.addEventListener("error", function (e) {
-    if (e.target.tagName === "IMG") {
-        console.error("❌ IMAGE FAILED TO LOAD:");
-        console.error("Broken URL:", e.target.src);
-    }
-}, true);
-
-/* =========================
+/* =============
    HOMEPAGE CONTENT
-========================= */
+=============== */
 
 async function loadHomepageContent() {
     try {
@@ -64,7 +54,7 @@ async function loadHomepageContent() {
 }
 
 
-/* =========================
+/* ==================
    MENU TOGGLE
 ========================= */
 
@@ -258,27 +248,39 @@ async function loadPrograms() {
 function initMapLogic() {
     const pins = document.querySelectorAll(".pin");
     const mapImg = document.getElementById("mapImage");
+    const rightImages = document.querySelectorAll(".location-grid img");
 
-    const locations = [
-        "media/sonpark.jpg",
-        "media/kingsview.jpg",
-        "media/whiteriver.jpg",
-        "media/valencia.jpg"
-    ];
+    let activeIndex = null;
 
+    function setActive(index) {
+        activeIndex = index;
+
+        // ONLY highlight pin
+        pins.forEach((p, i) => {
+            p.classList.toggle("active-pin", i === index);
+        });
+
+        // lift ONLY right-side image
+        rightImages.forEach((img, i) => {
+            img.classList.toggle("active-location", i === index);
+        });
+    }
+
+    // PIN CLICK
     pins.forEach((pin, index) => {
-        pin.addEventListener("click", () => {
-            mapImg.src = getImageUrl(locations[index]);
-
-            pins.forEach(p => p.classList.remove("active-pin"));
-            pin.classList.add("active-pin");
+        pin.addEventListener("click", (e) => {
+            e.stopPropagation();
+            setActive(index);
         });
     });
 
-    mapImg.addEventListener("click", () => {
-        mapImg.src = getImageUrl("/media/mapimage.jpg");
-        pins.forEach(p => p.classList.remove("active-pin"));
+    // RIGHT IMAGE CLICK 
+    rightImages.forEach((img, index) => {
+        img.addEventListener("click", () => {
+            setActive(index);
+        });
     });
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {

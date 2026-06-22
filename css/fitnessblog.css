@@ -42,3 +42,69 @@
 .blog-btn:hover{
     background:#ff8c00;
 }
+
+/* ====================
+   NEWSLETTER SECTION
+========================= */
+
+.newsletter {
+    background: linear-gradient(135deg, #111, #1c1c1c);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading */
+.newsletter h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: orange;
+}
+
+/* Paragraph */
+.newsletter p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+/* Input field */
+.newsletter input {
+    width: 70%;
+    max-width: 400px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Button */
+.newsletter button {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 25px;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.newsletter button:hover {
+    background: #ff8c00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.3);
+}
