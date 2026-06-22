@@ -24,9 +24,7 @@ function getImageUrl(path) {
 function setHeroImage() {
     const heroImg = document.querySelector(".classes-hero-img");
 
-    // fallback image (always works)
-    heroImg.src = `${BASE_URL}/classesmedia/heroimage.jpg`;
-}
+   heroImg.src = "classesmedia/heroimage.jpg";
 
 /* =========================
    LOAD DATA

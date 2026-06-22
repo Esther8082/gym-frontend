@@ -22,15 +22,15 @@ async function loadHomepageContent() {
         const video = document.getElementById("heroVideo");
         const source = document.getElementById("heroVideoSource");
 
-        source.src = `${BASE_URL}${data.hero_video}`;
+       source.src = getImageUrl(data.hero_video);
         video.load();
 
         // Welcome image
         document.getElementById("welcomeImage").src =
-            `${BASE_URL}${data.welcome_image}`;
+    getImageUrl(data.welcome_image);
         
         document.getElementById("mapImage").src =
-            `${BASE_URL}${data.map_image}`;
+    getImageUrl(data.map_image);
 
     } catch (err) {
         console.error("Failed to load homepage content:", err);
