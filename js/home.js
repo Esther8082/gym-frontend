@@ -6,25 +6,9 @@ const BASE_URL = "https://gym-website-1-guo0.onrender.com";
 ========================= */
 
 function getImageUrl(path) {
-    if (!path) {
-        console.warn("❌ Missing image path:", path);
-        return "";
-    }
+    if (!path) return "";
 
-    // Clean path safely
-    const cleanedPath = path
-        .replace(/^\/+/, "")       // remove leading /
-        .replace(/^media\//, "")   // remove duplicate "media/"
-        .replace(/^classesmedia\//, "classesmedia/"); // keep valid folder if needed
-
-    const url = `${BASE_URL}/${cleanedPath}`;
-
-    console.log("🖼️ IMAGE DEBUG");
-    console.log("Raw DB path:", path);
-    console.log("Cleaned path:", cleanedPath);
-    console.log("Final URL:", url);
-
-    return url;
+    return `${BASE_URL}${path}`;
 }
 
 /* =========================
