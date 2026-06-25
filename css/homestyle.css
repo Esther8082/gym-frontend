@@ -523,6 +523,11 @@ opacity: 0.85; }
     padding: 80px 5%;
 }
 
+.locations-btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
 /* =========================
    MAP
 ========================= */
