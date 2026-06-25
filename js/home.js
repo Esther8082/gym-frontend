@@ -178,6 +178,11 @@ async function loadCoaches() {
         const res = await fetch(`${BASE_URL}/trainers`);
         coachesData = await res.json();
 
+         // Remove Coach Hans
+        coachesData = coachesData.filter(
+            coach => coach.name !== "Coach Hans"
+        );
+
         if (!coachesData.length) return;
 
         showCoach(0);
@@ -226,6 +231,8 @@ async function loadLocations() {
     } catch (err) {
         console.error("Failed to load locations:", err);
     }
+
+    
 }
 
 /* =========================
