@@ -471,29 +471,20 @@ opacity: 0.85; }
     min-width: 280px;
 }
 
-/* RIGHT SIDE IMAGES */
-.coach-images {
-    display: flex;
-    gap: 20px;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
 
 /* COACH IMAGE CARD */
-.coach-img {
-    width: 220px;
-    height: 280px;
+.coach-image {
+    width: 320px;
+    height: 420px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
 }
 
-.coach-img:hover {
+.coach-image:hover {
     transform: scale(1.05);
-}  
+}
 /* =========================
    PERSONAL TRAINER BUTTON
 ========================= */
@@ -954,6 +945,12 @@ Program Buttons
     .coach-container {
          flex-direction: column;
         text-align: center;
+    }
+
+     .coach-image {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
     }
 
     .coach-images img {
