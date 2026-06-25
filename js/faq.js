@@ -1,3 +1,13 @@
+
+/* ==================
+   MENU TOGGLE
+========================= */
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}
+
 const faqItems = document.querySelectorAll(".faq-item");
 
 faqItems.forEach(item => {

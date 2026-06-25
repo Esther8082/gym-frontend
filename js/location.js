@@ -9,6 +9,16 @@ const API_URL = "https://gym-website-1-guo0.onrender.com/clubs";
 
 let clubs = [];
 
+
+/* ==================
+   MENU TOGGLE
+========================= */
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}
+
 /* =========================
    LOAD DATA FROM DATABASE
 ========================= */

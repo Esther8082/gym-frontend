@@ -19,6 +19,15 @@ function getImageUrl(path) {
     return `${BASE_URL}${path.startsWith("/") ? "" : "/"}${path}`;
 }
 
+/* ==================
+   MENU TOGGLE
+========================= */
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}
+
 /* =================
    HERO IMAGE 
 ========================= */
@@ -26,6 +35,7 @@ function setHeroImage() {
     const heroImg = document.querySelector(".classes-hero-img");
 
    heroImg.src = "classesmedia/heroimage.jpg";}
+
 
 /* =========================
    LOAD DATA

@@ -216,23 +216,62 @@ async function loadLocations() {
         const locations = await res.json();
 
         const container = document.getElementById("locationGrid");
-
         container.innerHTML = "";
 
-        locations.forEach(loc => {
+        locations.forEach((loc, index) => {
             container.innerHTML += `
-                <div class="location-card">
+                <div class="location-card" data-index="${index}">
                     <img src="${getImageUrl(loc.image)}" alt="${loc.name}">
                     <h4>${loc.name}</h4>
                 </div>
             `;
         });
 
+        setupLocationInteraction();
+
     } catch (err) {
         console.error("Failed to load locations:", err);
     }
+}
 
-    
+function setupLocationInteraction() {
+    const pins = document.querySelectorAll(".pin");
+    const cards = document.querySelectorAll(".location-card");
+
+    function setActive(index) {
+
+        // PIN highlight
+        pins.forEach(pin => {
+            pin.classList.remove("active-pin");
+        });
+
+        const activePin = document.querySelector(`.pin[data-index="${index}"]`);
+        if (activePin) activePin.classList.add("active-pin");
+
+        // IMAGE highlight
+        cards.forEach(card => {
+            card.classList.remove("active");
+        });
+
+        const activeCard = document.querySelector(`.location-card[data-index="${index}"]`);
+        if (activeCard) activeCard.classList.add("active");
+    }
+
+    // PIN CLICK
+    pins.forEach(pin => {
+        pin.addEventListener("click", () => {
+            const index = pin.dataset.index;
+            setActive(index);
+        });
+    });
+
+    // IMAGE CLICK
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            const index = card.dataset.index;
+            setActive(index);
+        });
+    });
 }
 
 /* =========================

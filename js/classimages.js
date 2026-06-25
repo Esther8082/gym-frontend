@@ -2,6 +2,16 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../db/database");
 
+
+/* ==================
+   MENU TOGGLE
+========================= */
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}
+
 // GET ALL CLASS IMAGES
 router.get("/", async (req, res) => {
     try {

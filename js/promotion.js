@@ -12,3 +12,13 @@ function downloadVoucher() {
 
     alert("Voucher downloaded successfully!");
 }
+
+
+/* ==================
+   MENU TOGGLE
+========================= */
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}

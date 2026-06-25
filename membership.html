@@ -6,31 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membership Plans</title>
 
+        <link rel="stylesheet" href="css/homestyle.css">
     <link rel="stylesheet" href="css/membership.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ==============
+ NAVBAR
+============ -->
 <nav class="navbar">
     <div class="nav-left">
         <a href="home.html" class="home-link">Home</a>
     </div>
 
-    <div class="nav-right">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-right" id="navLinks">
         <a href="classes.html">Classes</a>
         <a href="promotions.html">Promotions</a>
         <a href="membership.html">Membership</a>
         <a href="contact.html">Contact</a>
-        <a href="about.html">About Us</a>
     </div>
 </nav>
 
 <!-- HERO -->
 <section class="membership-hero">
-
-  <img id="heroImage" alt="Membership Hero Image" style="width:100%; height:400px; object-fit:cover;">
-    <div class="hero-overlay"></div>
 
     <div class="hero-content">
         <h1>Membership Plans</h1>
@@ -45,9 +46,9 @@
     <h2 class="section-title">Standard Plan</h2>
 
     <div class="billing-toggle">
-        <button class="active">Monthly</button>
-        <button>Annually</button>
-    </div>
+    <button onclick="setBillingMode('monthly')" class="active">Monthly</button>
+    <button onclick="setBillingMode('annually')">Annually</button>
+</div>
 
     <div class="plan-card">
 
@@ -68,7 +69,7 @@
     <div class="plan-dots">
         <span class="dot active" onclick="setPlan(0)"></span>
         <span class="dot" onclick="setPlan(1)"></span>
-        <span class="dot" onclick="setPlan(2)"></span>
+    
     </div>
 
 </section>
@@ -80,10 +81,10 @@
     <p class="specialized-subheading">We've Got You Covered With Our</p>
     <h2 class="specialized-title">Specialized Plans</h2>
 
-    <div class="billing-toggle">
-        <button class="active">Monthly</button>
-        <button>Annually</button>
-    </div>
+  <div class="billing-toggle specialized-toggle">
+    <button onclick="setSpecializedBilling('monthly')" class="active">Monthly</button>
+    <button onclick="setSpecializedBilling('annually')">Annually</button>
+</div>
 
     <div class="plan-card">
 
@@ -108,7 +109,7 @@
 
 </section>
 
-<!-- SIGN UP SECTION (RESTORED) -->
+<!-- SIGN UP SECTION  -->
 <section class="signup-section">
 
     <div class="signup-container">

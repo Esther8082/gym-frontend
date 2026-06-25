@@ -235,29 +235,18 @@ body {
 Join Button
 ========================= */
 
-.join-btn { 
+.join-btn {
+    display: inline-block;
     margin-top: 25px;
-     padding: 14px 32px;
-      background: linear-gradient(135deg, #ff9800, #ff5e00); 
-      color: white;
-       border: none; 
-       border-radius: 30px;
-        font-size: 16px;
-         font-weight: 600;
-          cursor: pointer;
-           transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(255, 94, 0, 0.3);
-         
-        }
+    padding: 14px 32px;
+    background: orange;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
      
-        .join-btn:hover {
-             transform: translateY(-3px);
-              box-shadow: 0 15px 35px rgba(255, 94, 0, 0.5); }
-               
-              .join-btn:active {
-                 transform: translateY(0);
-                 }   
-
         
 /* ====================
    FLOW SECTION
@@ -321,23 +310,7 @@ Join Button
       color: white; 
       margin-bottom: 30px; }
 
-/* Toggle between month and yearly*/
-.billing-toggle { 
-    display: flex; 
-    justify-content: center;
-     gap: 15px; 
-     margin-bottom: 80px; } 
-     
-     .billing-toggle button { 
-        padding: 12px 30px; 
-        border: none; 
-        border-radius: 30px;
-         background: rgba(255,255,255,0.08);
-          color: white; 
-          cursor: pointer; } 
-          
-.active-toggle { 
-    background: orange !important; }
+
 
 /* =========================
 Column layout for membership cards
@@ -421,7 +394,27 @@ color: white; }
     height: 260px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
 
+.membership-button-wrapper {
+    text-align: center;
+    margin-top: 40px;
+}
 
+.membership-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background: linear-gradient(135deg, #ff9800, #ff5e00);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(255, 94, 0, 0.3);
+}
+
+.membership-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 94, 0, 0.5);
+}
 /* =========================
    COACH SECTION (UNCHANGED)
 ========================= */
@@ -518,7 +511,6 @@ opacity: 0.85; }
 .locations {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
     gap: 55px;
     padding: 80px 5%;
 }
@@ -578,7 +570,7 @@ opacity: 0.85; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 450px;
+  
 }
 
 /* =========================
@@ -589,7 +581,6 @@ opacity: 0.85; }
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
-    width: 100%;
 }
 
 /* =========================
@@ -842,9 +833,125 @@ Program Buttons
     color: #aaa;
 }
 
+/* MOBILE VIEW */
+@media (max-width: 780px) {
+
+    .hamburger {
+        display: block;
+        z-index: 2001;
+    }
+
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #111;
+        width: 200px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .nav-right.active {
+        display: flex;
+    }
+
+    .nav-right a {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+     /* MAIN CONTAINER */
+    .flow-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* EACH CARD FULL WIDTH */
+    .flow-card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    /* OPTIONAL: reduce text size */
+    .flow-card h3 {
+        font-size: 18px;
+    }
+
+    .flow-card p {
+        font-size: 14px;
+    }
+    
+    /* STACK MAP ABOVE GRID */
+    .locations {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* MAP FULL WIDTH */
+    .map-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .map-image {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    /* GRID UNDER MAP */
+    .location-side {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 2x2 GRID BUT SMALLER */
+    .location-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .location-card {
+        width: 100%;
+    }
+
+    .location-card img {
+        width: 100%;
+        height: 140px; /* smaller for mobile */
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    /* BUTTON */
+    .locations-button-wrapper {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .locations-btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    /* PIN SIZE ADJUST */
+    .pin {
+        font-size: 20px;
+    }
+}
+
+
 /* =========================
    MOBILE RESPONSIVE FIXES
-========================= */
+
 
 @media screen and (max-width: 768px) {
 
@@ -853,8 +960,8 @@ Program Buttons
         position: relative;
         z-index: 2000;
     }
-
-    /* Prevent horizontal scrolling */
+========================= */
+    /* Prevent horizontal scrolling 
     body {
         overflow-x: hidden;
     }
@@ -885,7 +992,12 @@ Program Buttons
         border-bottom: 1px solid #eee;
         text-decoration: none;
     }
-    /* HERO SECTION */
+*/
+    /* =========================
+   MOBILE RESPONSIVE FIXES
+========================= */
+
+    /* HERO SECTION 
     .hero {
         height: auto;
     }
@@ -902,15 +1014,15 @@ Program Buttons
         width: 100%;
         height: auto;
         object-fit: cover;
-    }
+    }*/
 
-    /* FEATURES SCROLL */
+    /* FEATURES SCROLL 
     .feature-card {
         min-width: 200px;
         font-size: 14px;
-    }
+    }*/
 
-    /* WELCOME SECTION */
+    /* WELCOME SECTION 
     .welcome-container {
         flex-direction: column;
         text-align: center;
@@ -919,9 +1031,9 @@ Program Buttons
     .welcome-image img {
         width: 100%;
         height: auto;
-    }
+    } */
 
-    /* FLOW CARDS */
+    /* FLOW CARDS 
     .flow-cards {
         display: flex;
         flex-direction: column;
@@ -931,8 +1043,8 @@ Program Buttons
     .flow-card {
         width: 90%;
     }
-
-    /* MEMBERSHIP */
+    */
+    /* MEMBERSHIP 
     .membership-container {
         flex-direction: column;
     }
@@ -944,9 +1056,9 @@ Program Buttons
     .membership-card img {
         width: 100%;
         height: auto;
-    }
+    } */
 
-    /* COACH SECTION */
+    /* COACH SECTION 
     .coach-container {
          flex-direction: column;
         text-align: center;
@@ -961,20 +1073,20 @@ Program Buttons
     .coach-images img {
         width: 60px;
         height: 60px;
-    }
+    } */
 
-    /* MAP */
+    /* MAP 
     .map-image {
         width: 100%;
         height: auto;
-    }
+    } */
 
-    /* LOCATION GRID */
+    /* LOCATION GRID 
     .location-grid {
         grid-template-columns: 1fr;
-    }
+    } */
 
-    /* PROGRAM SECTION */
+    /* PROGRAM SECTION 
     .program-display {
         flex-direction: column;
     }
@@ -982,9 +1094,9 @@ Program Buttons
     .program-image img {
         width: 100%;
         height: auto;
-    }
+    }*/
 
-    /* FOOTER */
+    /* FOOTER 
     .footer-container {
         flex-direction: column;
         text-align: center;
@@ -992,5 +1104,5 @@ Program Buttons
 
     .footer-column {
         margin-bottom: 20px;
-    }
-}
+    } 
+}*/

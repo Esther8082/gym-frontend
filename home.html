@@ -11,7 +11,7 @@
 <body>
 
 <!-- ==============
-     NAVBAR
+ NAVBAR
 ============ -->
 <nav class="navbar">
     <div class="nav-left">
@@ -56,7 +56,7 @@
 </section>
 
 <!-- ==========
-     WELCOME SECTION
+ WELCOME SECTION
 =========== -->
 <section class="welcome-section">
     <div class="welcome-container">
@@ -64,11 +64,14 @@
         <div class="welcome-text">
             <h2>Welcome to Next Gen Fitness</h2>
             <p>
-                Fitness is more than exercise — it's a lifestyle. We help you achieve your goals
+                Fitness is more than exercise, it's a lifestyle! We help you achieve your goals
                 with expert trainers and modern facilities.
             </p>
 
-            <button class="join-btn">Join Now</button>
+            <a href="membership.html" class="join-btn">
+                Join Now
+            </a>
+
         </div>
 
         <div class="welcome-image">
@@ -79,7 +82,7 @@
 </section>
 
 <!-- ===============
-     FLOW SECTION
+FLOW SECTION
 =========== -->
 <section class="flow-section">
     <h2 class="flow-title">Find Your Flow</h2>
@@ -91,7 +94,7 @@
 =============== -->
 <section class="membership-section">
 
-    <h2 class="membership-title">Choose Your Plan</h2>
+    <h2 class="membership-title">Different Types Of Plans For You To Choose From</h2>
 
     <div class="membership-container">
 
@@ -106,6 +109,13 @@
         </div>
 
     </div>
+
+      <div class="membership-button-wrapper">
+        <a href="membership.html" class="membership-btn">
+            View Membership Plans
+        </a>
+    </div>
+
 </section>
 
 <!-- ==============
@@ -142,22 +152,23 @@
     <div class="map-container">
         <img id="mapImage" alt="Map" class="map-image">
 
-        <button class="pin pin1">📍</button>
-        <button class="pin pin2">📍</button>
-        <button class="pin pin3">📍</button>
-        <button class="pin pin4">📍</button>
+       <button class="pin pin1" data-index="0">📍</button>
+        <button class="pin pin2" data-index="1">📍</button>
+        <button class="pin pin3" data-index="2">📍</button>
+        <button class="pin pin4" data-index="3">📍</button>
     </div>
 
-    <div class="location-grid">
-        <div id="locationGrid"></div>
+    <div class="location-side">
+
+        <div id="locationGrid" class="location-grid"></div>
 
       <div class="locations-button-wrapper">
     <a href="location.html" class="locations-btn">
         View All Locations
     </a>
-</div>
+ </div>
 
-    </div>
+</div>
 
 </section>
 

@@ -1,3 +1,13 @@
+
+/* ==================
+   MENU TOGGLE
+========================= */
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}
+
 function bookTrainer(trainerName) {
 
     const message = document.getElementById("bookingMessage");

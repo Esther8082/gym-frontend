@@ -1,3 +1,13 @@
+
+/* ==================
+   MENU TOGGLE
+========================= */
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const input = document.querySelector(".newsletter input");
     const button = document.querySelector(".newsletter button");

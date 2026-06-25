@@ -1,3 +1,13 @@
+
+/* ==================
+   MENU TOGGLE
+========================= */
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}
+
 document.getElementById("contactForm")
 .addEventListener("submit", function(e) {
 
