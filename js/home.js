@@ -1,6 +1,7 @@
 
+// Base URL of the backend API hosted on Render
 const BASE_URL = "https://gym-website-1-guo0.onrender.com";
-let programsData = [];
+let programsData = [];  // Stores all program data fetched from the backend
 
 /* ==============
    IMAGE HELPER 
@@ -9,6 +10,7 @@ let programsData = [];
 function getImageUrl(path) {
     if (!path) return "";
 
+// Combine the backend URL with the image path
     return `${BASE_URL}/${path.replace(/^\/+/, "")}`;
 }
 
@@ -19,10 +21,12 @@ function getImageUrl(path) {
 
 async function loadHomepageContent() {
     try {
+
+        //request items from the backend
         const res = await fetch(`${BASE_URL}/home`);
         const data = await res.json();
 
-        console.log("📦 HOME API RESPONSE:", data);
+        console.log(" HOME API RESPONSE:", data);
 
         // Hero video
         const video = document.getElementById("heroVideo");
@@ -36,7 +40,7 @@ async function loadHomepageContent() {
         welcomeImg.src = getImageUrl(data.welcome_image);
 
         welcomeImg.onerror = () => {
-            console.error("❌ Welcome image failed:", welcomeImg.src);
+            console.error(" Welcome image failed:", welcomeImg.src);
         };
 
         // Map image
@@ -44,7 +48,7 @@ async function loadHomepageContent() {
         mapImg.src = getImageUrl(data.map_image);
 
         mapImg.onerror = () => {
-            console.error("❌ Map image failed:", mapImg.src);
+            console.error("Map image failed:", mapImg.src);
         };
 
     } catch (err) {
@@ -75,6 +79,7 @@ async function loadFlowPrograms() {
         const container = document.getElementById("flowCards");
         container.innerHTML = "";
 
+        // Dynamically create program cards
         programs.forEach(program => {
             container.innerHTML += `
                 <div class="flow-card">
@@ -110,6 +115,7 @@ async function loadHomeMemberships() {
         stdContainer.innerHTML = "";
         specContainer.innerHTML = "";
 
+        // Display standard memberships
         standard.forEach(plan => {
             stdContainer.innerHTML += `
                 <div class="membership-card">
@@ -185,8 +191,9 @@ async function loadCoaches() {
 
         if (!coachesData.length) return;
 
-        showCoach(0);
+        showCoach(0); // Display first coach
 
+        // Automatically switch coaches every 4 seconds
         setInterval(() => {
             coachIndex = (coachIndex + 1) % coachesData.length;
             showCoach(coachIndex);
@@ -197,6 +204,7 @@ async function loadCoaches() {
     }
 }
 
+// Displays coach details on screen
 function showCoach(i) {
     const coach = coachesData[i];
     if (!coach) return;
