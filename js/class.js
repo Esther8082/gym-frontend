@@ -10,12 +10,13 @@ let classImages = [];
 ========================= */
 const BASE_URL = "https://gym-website-1-guo0.onrender.com";
 
-/* =========================
+/* ====================
    IMAGE HELPER
 ========================= */
 function getImageUrl(path) {
     if (!path) return "";
 
+    // Build and return the full image URL
     return `${BASE_URL}${path.startsWith("/") ? "" : "/"}${path}`;
 }
 
@@ -39,18 +40,24 @@ function setHeroImage() {
 
 /* =========================
    LOAD DATA
+   Fetches class information and images from
+   the backend and dynamically creates class cards.
 ========================= */
 async function loadClasses() {
 
     try {
-        const [classesRes, imagesRes] = await Promise.all([
+
+        // Fetch classes and images
+        const [classesRes, imagesRes] = await Promise.all([ //to fetch classes and class images simultaneously
             fetch(`${BASE_URL}/classes`),
             fetch(`${BASE_URL}/class-images`)
         ]);
 
+         // Convert responses to JSON
         classesData = await classesRes.json();
         classImages = await imagesRes.json();
 
+        
         const grid = document.getElementById("classesGrid");
         if (!grid) return;
 
@@ -73,7 +80,7 @@ async function loadClasses() {
 
             grid.appendChild(card);
         });
-
+// Automatically display the first class
         if (classesData.length > 0) {
             openClass(classesData[0].class_id, false);
         }
@@ -91,6 +98,7 @@ function openClass(classId, shouldScroll = true) {
     const info = classesData.find(c => c.class_id == classId);
     if (!info) return;
 
+    // Store selected class ID
     currentClassId = classId;
 
     document.getElementById("classTitle").textContent = info.name;
@@ -98,6 +106,7 @@ function openClass(classId, shouldScroll = true) {
     document.getElementById("classDuration").textContent = info.duration;
     document.getElementById("classCategory").textContent = info.category;
 
+     // Find and display class background image
     const img = classImages.find(i => i.class_id == classId);
     const imageUrl = img ? getImageUrl(img.image_url) : "";
 
@@ -107,6 +116,7 @@ function openClass(classId, shouldScroll = true) {
     section.style.backgroundSize = "cover";
     section.style.backgroundPosition = "center";
 
+    // Scroll to class details section
     if (shouldScroll) {
         section.scrollIntoView({ behavior: "smooth" });
     }
@@ -124,6 +134,7 @@ function changeGym(gym) {
 
 /* =========================
    LOAD SCHEDULE
+
 ========================= */
 async function loadSchedule() {
 
@@ -218,7 +229,9 @@ function saveBooking() {
 }
 
 /* =========================
-   INIT
+   INITIALIZATION
+   Executes automatically when the webpage
+   finishes loading.
 ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
